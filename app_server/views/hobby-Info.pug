@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12 
+      h1 #{pageHeader.title}
+  .row
+    .col-12.col-md-8
+     if hobbies
+      each hobby in hobbies
+       article
+        header
+         h4 Username: #{hobbies.username}         
+         h4 Email: #{hobbies.email}
+         h4 Password: #{hobbies.password}
+         h4 Game: #{hobbies.selectGame} 
+         h4 Army Points: #{hobbies.armyPoints}
+         h4 Army List: #{hobbies.armyList}
+     else
+      p No hobbies found due to npm issues
+

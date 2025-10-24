@@ -1,0 +1,26 @@
+extends layout
+block content
+    .row.banner
+        .col-12
+            h1 #{pageHeader.title}
+    .row
+        .col-12.col-md-8
+            form.form-horizontal(action='/hobbies/')
+              fieldset
+                legend
+                  | #{pageHeader.strapline}
+                div.form-group
+                  label(class='col-md-4 control-label' for='username')
+                    | Username:
+                  div(class='col-md-4')
+                    input#username.form-control.input-md(name='username' type='text' placeholder='username/emailaddress')
+                div.form-group
+                  label(class='col-md-4 control-label' for='passwordinput')
+                    | Password:
+                  div(class='col-md-4')
+                    input#passwordinput.form-control.input-md(name='passwordinput' type='password' placeholder='password')
+                div.form-group
+                  label(class='col-md-4 control-label' for='singlebutton')
+                  div(class='col-md-4')
+                    button#singlebutton.btn.btn-primary(name='singlebutton')        
+                      | Sign In

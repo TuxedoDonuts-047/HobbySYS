@@ -1,0 +1,56 @@
+extends layout
+block content
+    .row.banner
+        .col-12
+            h1 #{pageHeader.title}
+    .row
+        .col-12.col-md-8
+            form(action="/hobbies/register", method="get", role="form") 
+                fieldset
+                  legend
+                    | #{pageHeader.strapline}
+                  div.form-group
+                    label(class='col-md-4 control-label' for='name')
+                      | Username:
+                    div(class='col-md-4')
+                      input#name.form-control.input-md(name='name' type='text' placeholder='name' required)
+                  div.form-group
+                    label(class='col-md-4 control-label' for='email')
+                      | Email:
+                    div(class='col-md-4')
+                      input#email.form-control.input-md(name='email' type='text' placeholder='email')
+                  div.form-group
+                    label(class='col-md-4 control-label' for='passwordinput')
+                      | Password:
+                    div(class='col-md-4')
+                      input#passwordinput.form-control.input-md(name='passwordinput' type='password' placeholder='password')
+                  div.form-group
+                    label(class='col-md-4 control-label' for='selectGame')
+                      | Tabletop Game
+                    div(class='col-md-4')
+                      select#selectGame.form-control(name='selectGame')
+                        option(value='40k')
+                          | Warhammer 40k
+                        option(value='Horus')
+                          | Horus Heresy
+                        option(value='AoS')
+                          | Age of Sigmar
+                        option(value='BB')
+                          | Blood Bowl
+                  div.form-group
+                    label(class='col-md-4 control-label' for='gamePoint')
+                      | Points
+                    div(class='col-md-4')
+                      input#gamePoint.form-control.input-md(name='gamePoint' type='search' placeholder='e.g. 1000')
+                  div.form-group
+                    label(class='col-md-4 control-label' for='armyList')
+                     | Army List (Paste into text box in GW format)
+                    div(class='col-md-4')
+                    textarea#armyList.form-control(name='armyList')
+                      |
+                div.form-group
+                  label(class='col-md-4 control-label' for='singlebutton')
+                  div(class='col-md-4')
+                    button#singlebutton.btn.btn-primary(actions = "/hobbies/",name='singlebutton')
+                      | Create Account
+            .col-12.col-md-4
